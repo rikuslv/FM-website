@@ -1,0 +1,280 @@
+/* Change theme (dark)  */
+:root {
+    --base-color: white;
+    --base-variant: #e8e9ed;
+    --text-color: #111528;
+    --secondary-text: #4258cf;
+    --primary-color: #6373c3;
+    --navbar-bg: #ffffff; /* Light navbar bg */
+    --navbar-border: #eaeaea;
+    /*dark boarder in light mod*/
+    --box-border: rgba(0, 0, 0, 0.15);
+    --dashed-border: rgba(0, 0, 0, 0.3);
+}
+
+.dark_mode {
+    --base-color: #070b07;
+    --base-variant: #101425;
+    --text-color: #fff;
+    --secondary-text: #a4a5b8;
+    --primary-color: #0071ff;
+    --navbar-bg: #141914; /* Dark navbar bar*/
+    --navbar-border: #222c22;
+    
+    /* Pievieno šo tumšajam režīmam (gaišāki rāmīši, kā bija līdz šim) */
+    --box-border: rgba(255, 255, 255, 0.2);
+    --dashed-border: rgba(255, 255, 255, 0.4);
+}
+
+/* Theme Switch Button Styling */
+#theme_switch {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#theme_switch {
+    fill: var(--primary-color);
+}
+
+/* light */
+#theme_switch .icon-light {
+    display: none;
+}
+#theme_switch .icon-dark {
+    display: block;
+    width: 24px;  /* can change size */
+    height: 24px;
+}
+
+/* when active  Dark Mode, change icons*/
+.dark_mode #theme_switch .icon-light {
+    display: block;
+    width: 24px;
+    height: 24px;
+}
+.dark_mode #theme_switch .icon-dark {
+    display: none;
+}
+
+/* Reset basic styles and set up the font */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--base-color); 
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Main navbar container styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 40px;
+    background-color: var(--navbar-bg); /* Fixed to use variable */
+    border-bottom: 1px solid var(--navbar-border); /* Fixed to use variable */
+    height: 64px;
+}
+
+/* Left side: Logo styling */
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+.logo-box {
+    background-color: #ff4500; /* Vibrant orange/red logo background */
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 16px;
+    width: 34px;
+    height: 27px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+}
+
+.logo-text {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+/* Center: Navigation links styling */
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 8px;
+    align-items: center;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: var(--text-color); 
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    opacity: 0.8;
+}
+
+.nav-item:hover {
+    color: var(--text-color);
+    background-color: var(--base-variant); /* Fixed to use variable */
+    opacity: 1;
+}
+
+/* Highlighted active tab (Platform) */
+.nav-item.active {
+    color: #ff4500; /* Made it match the logo or prominent color */
+    background-color: var(--base-variant); 
+}
+
+/* Right side: Action buttons styling */
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-login, .btn-signup {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text-color); /* Fixed to change color in dark mode */
+    transition: opacity 0.2s ease;
+}
+
+.btn-login:hover, .btn-signup:hover {
+    opacity: 0.7;
+}
+
+/* The dark pill-shaped CTA button */
+.btn-demo {
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #000000;
+    padding: 10px 20px;
+    border-radius: 20px; /* Capsule look */
+    transition: background-color 0.2s ease;
+}
+
+.btn-demo:hover {
+    background-color: #222222;
+}
+
+/* General Layout Structure for Gallery */
+.content-container {
+    padding: 40px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.intro-box h1 {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 30px;
+}
+
+/* ==========================================================================
+   NEW 3-COLUMN GALLERY GRID LAYOUT 
+   ========================================================================== */
+
+/* Horizontal wrapper for the 3 gallery columns */
+.gallery-grid {
+    display: flex;
+    gap: 40px;               /* Space between columns */
+    align-items: flex-start;
+    margin-top: 30px;
+    margin-bottom: 40px;
+    width: 100%;
+}
+
+/* Individual project column block */
+.gallery-item {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Image container with extra right padding to fit the vertical date */
+.image-wrapper {
+    position: relative;
+    width: 100%;
+    margin-bottom: 15px;
+    padding-right: 45px;    /* Leaves exact space for the rotated text */
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+    border-radius: 4px;     /* Subtle clean rounded edge matching your style */
+}
+
+/* Rotated vertical text orientation and placement */
+.vertical-date {
+    position: absolute;
+    right: -10px;           /* Rotates out from the image right border */
+    top: 40px;
+    transform: rotate(90deg);
+    transform-origin: left top;
+    font-size: 11px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    opacity: 0.6;           /* Semi-transparent clean look */
+    white-space: nowrap;
+}
+
+/* Title and pill category capsule alignment */
+.item-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding-right: 45px;    /* Matches image grid lines precisely */
+}
+
+.item-footer h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+}
+
+/* Minimalist capsule border styling for tags */
+.category-tag {
+    border: 1px solid var(--text-color); /* Dynamically switches color based on theme */
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+/* Bottom description section typography */
+.gallery-info {
+    margin-top: 40px;
+    max-width: 600px;       /* Keeps reading width comfortable and neat */
+}
+
+.gallery-info p {
+    font-size: 13px;
+    line-height: 1.6;
+    opacity: 0.7;
+}
