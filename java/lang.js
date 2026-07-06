@@ -1,3 +1,4 @@
+//make with ai helo
 // Translation data object (English comment: Combined object for all pages)
 const translations = {
     en: {
