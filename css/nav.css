@@ -1,13 +1,11 @@
-/* Change theme (dark)  */
 :root {
     --base-color: white;
     --base-variant: #e8e9ed;
     --text-color: #111528;
     --secondary-text: #4258cf;
     --primary-color: #6373c3;
-    --navbar-bg: #ffffff; /* Light navbar bg */
+    --navbar-bg: #ffffff;
     --navbar-border: #eaeaea;
-    /*dark boarder in light mod*/
     --box-border: rgba(0, 0, 0, 0.15);
     --dashed-border: rgba(0, 0, 0, 0.3);
 }
@@ -18,15 +16,12 @@
     --text-color: #fff;
     --secondary-text: #a4a5b8;
     --primary-color: #0071ff;
-    --navbar-bg: #141914; /* Dark navbar bar*/
+    --navbar-bg: #141914;
     --navbar-border: #222c22;
-    
-    /* Pievieno šo tumšajam režīmam (gaišāki rāmīši, kā bija līdz šim) */
     --box-border: rgba(255, 255, 255, 0.2);
     --dashed-border: rgba(255, 255, 255, 0.4);
 }
 
-/* Theme Switch Button Styling */
 #theme_switch {
     background: none;
     border: none;
@@ -41,17 +36,15 @@
 
 }
 
-/* light */
 #theme_switch .icon-light {
     display: none;
 }
 #theme_switch .icon-dark {
     display: block;
-    width: 24px;  /* can change size */
+    width: 24px;
     height: 24px;
 }
 
-/* when active  Dark Mode, change icons*/
 .dark_mode #theme_switch .icon-light {
     display: block;
     width: 24px;
@@ -61,7 +54,6 @@
     display: none;
 }
 
-/* Reset basic styles and set up the font */
 * {
     margin: 0;
     padding: 0;
@@ -74,18 +66,16 @@ body {
     color: var(--text-color);
 }
 
-/* Main navbar container styling */
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 12px 40px;
-    background-color: var(--navbar-bg); /* Fixed to use variable */
-    border-bottom: 1px solid var(--navbar-border); /* Fixed to use variable */
+    background-color: var(--navbar-bg);
+    border-bottom: 1px solid var(--navbar-border);
     height: 64px;
 }
 
-/* Left side: Logo styling */
 .nav-logo {
     display: flex;
     align-items: center;
@@ -94,7 +84,7 @@ body {
 }
 
 .logo-box {
-    background-color: #ff4500; /* Vibrant orange/red logo background */
+    background-color: #ff4500;
     color: #ffffff;
     font-weight: 600;
     font-size: 16px;
@@ -112,7 +102,6 @@ body {
     color: var(--text-color);
 }
 
-/* Center: Navigation links styling */
 .nav-links {
     display: flex;
     list-style: none;
@@ -122,7 +111,7 @@ body {
 
 .nav-item {
     text-decoration: none;
-    color: var(--text-color); 
+    color: var(--text-color);
     font-size: 14px;
     font-weight: 500;
     padding: 8px 16px;
@@ -133,17 +122,15 @@ body {
 
 .nav-item:hover {
     color: var(--text-color);
-    background-color: var(--base-variant); /* Fixed to use variable */
+    background-color: var(--base-variant);
     opacity: 1;
 }
 
-/* Highlighted active tab (Platform) */
 .nav-item.active {
-    color: #ff4500; /* Made it match the logo or prominent color */
+    color: #ff4500;
     background-color: var(--base-variant); 
 }
 
-/* Right side: Action buttons styling */
 .nav-actions {
     display: flex;
     align-items: center;
@@ -154,7 +141,7 @@ body {
     text-decoration: none;
     font-size: 14px;
     font-weight: 500;
-    color: var(--text-color); /* Fixed to change color in dark mode */
+    color: var(--text-color);
     transition: opacity 0.2s ease;
 }
 
@@ -162,7 +149,6 @@ body {
     opacity: 0.7;
 }
 
-/* The dark pill-shaped CTA button */
 .btn-demo {
     text-decoration: none;
     font-size: 14px;
@@ -170,7 +156,7 @@ body {
     color: #ffffff;
     background-color: #000000;
     padding: 10px 20px;
-    border-radius: 20px; /* Capsule look */
+    border-radius: 20px;
     transition: background-color 0.2s ease;
 }
 
