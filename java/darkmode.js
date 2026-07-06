@@ -1,3 +1,5 @@
+//make with ai help
+
 // Check localStorage and select elements
 let darkMode = localStorage.getItem('darkMode');
 const themeSwitch = document.getElementById('theme_switch');
