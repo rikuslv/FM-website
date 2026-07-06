@@ -1,11 +1,9 @@
-/* --- Main container for spacing and alignment (Location) --- */
 .content-container {
     max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
 }
 
-/* --- First rectangle: Location and padding --- */
 .intro-box {
     border: 2px solid var(--box-border);
     border-radius: 8px;
@@ -21,9 +19,7 @@
     margin: 0;
 }
 
-/* --- Second large rectangle: Location and padding --- */
 .description-box {
-    /* Mainīgais no nav.css, lai pielāgotos tēmai */
     border: 2px solid var(--box-border);
     border-radius: 8px;
     padding: 30px;
@@ -33,7 +29,6 @@
     margin: 0 0 25px 0;
 }
 
-/* --- Dashed border/frame for the future image --- */
 .image-placeholder {
     width: 100%;
     height: 250px;
@@ -49,7 +44,6 @@
     letter-spacing: 1px;
 }
 
-/* --- Gallery Layout Structure --- */
 .gallery-grid {
     display: flex;
     gap: 40px;
@@ -74,7 +68,7 @@
 
 .image-wrapper img {
     width: 100%;
-    height: 350px; /* English comment: Fixed height to match reference dimensions cleanly */
+    height: 350px;
     display: block;
     object-fit: cover;
     border-radius: 4px;

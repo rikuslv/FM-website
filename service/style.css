@@ -1,90 +1,202 @@
-/* ==========================================================================
-   HOSTING LOOK-ALIFE SERVICES LAYOUT
-   ========================================================================== */
-
-/* Centrujam galveno saturu un uzliekam smuku fontu svaru */
 .text-center {
     text-align: center;
 }
 
+.intro-box.text-center {
+    margin-bottom: 60px;
+}
+
 .intro-box.text-center h1 {
-    font-size: 28px;
+    font-size: 42px;
     font-weight: 700;
-    margin-bottom: 12px;
-    letter-spacing: -0.5px;
+    margin-bottom: 16px;
+    letter-spacing: -0.8px;
+    line-height: 1.2;
+    background: linear-gradient(135deg, var(--text-color) 0%, var(--primary-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
 .intro-box.text-center h2 {
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 400;
-    opacity: 0.8;
-    max-width: 600px;
-    margin: 0 auto 40px auto;
+    opacity: 0.7;
+    max-width: 700px;
+    margin: 0 auto 50px auto;
+    line-height: 1.8;
+    color: var(--text-color);
 }
 
-/* Režģis bez liekiem fona rāmjiem, tīrs izkārtojums */
 .services-grid.layout-hosting {
     display: flex;
-    gap: 40px;
+    gap: 32px;
     width: 100%;
-    margin-top: 20px;
+    margin-top: 40px;
+    padding: 0 20px;
 }
 
 .services-grid.layout-hosting .service-card {
     flex: 1;
-    background: none; /* Noņemam lieko fonu, lai ir kā paraugā */
-    border: none;     /* Noņemam rāmjus */
-    padding: 0;
+    background: var(--base-variant);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 40px 30px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Bilžu konteiners */
+.dark_mode .services-grid.layout-hosting .service-card {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.services-grid.layout-hosting .service-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-text));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.services-grid.layout-hosting .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+    border-color: var(--primary-color);
+}
+
+.dark_mode .services-grid.layout-hosting .service-card:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.services-grid.layout-hosting .service-card:hover::before {
+    opacity: 1;
+}
+
 .service-image-wrapper {
     width: 100%;
-    max-width: 240px; /* Ierobežojam maksimālo bildes izmēru */
-    height: auto;
-    margin-bottom: 25px;
+    height: 200px;
+    margin-bottom: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
+    background: rgba(99, 115, 195, 0.08);
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.dark_mode .service-image-wrapper {
+    background: rgba(0, 113, 255, 0.08);
+}
+
+.services-grid.layout-hosting .service-card:hover .service-image-wrapper {
+    background: rgba(99, 115, 195, 0.15);
+}
+
+.dark_mode .services-grid.layout-hosting .service-card:hover .service-image-wrapper {
+    background: rgba(0, 113, 255, 0.15);
 }
 
 .service-hosting-img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: contain;
+    padding: 20px;
 }
 
-/* Teksta hierarhija tieši kā bildē */
 .service-main-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 4px;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 8px;
     color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.services-grid.layout-hosting .service-card:hover .service-main-title {
+    color: var(--primary-color);
 }
 
 .service-sub-title {
-    font-size: 14px;
-    font-weight: 500;
-    margin-bottom: 12px;
-    color: var(--text-color);
-    opacity: 0.9;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 16px;
+    color: var(--secondary-text);
+    opacity: 1;
 }
 
 .service-description {
-    font-size: 13px;
-    line-height: 1.6;
+    font-size: 14px;
+    line-height: 1.7;
     color: var(--text-color);
-    opacity: 0.7;
-    max-width: 320px; /* Lai teksts smuki lūzt kā paraugā */
+    opacity: 0.75;
+    max-width: 100%;
+    text-align: center;
 }
 
-/* Responsīvais skats mobilajām ierīcēm */
+@media (max-width: 1024px) {
+    .services-grid.layout-hosting {
+        gap: 24px;
+        padding: 0;
+    }
+
+    .services-grid.layout-hosting .service-card {
+        padding: 32px 24px;
+    }
+
+    .intro-box.text-center h1 {
+        font-size: 36px;
+    }
+
+    .intro-box.text-center h2 {
+        font-size: 16px;
+    }
+}
+
 @media (max-width: 768px) {
     .services-grid.layout-hosting {
         flex-direction: column;
-        gap: 60px;
+        gap: 24px;
+        padding: 0;
+    }
+
+    .services-grid.layout-hosting .service-card {
+        padding: 28px 20px;
+    }
+
+    .intro-box.text-center h1 {
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .intro-box.text-center h2 {
+        font-size: 14px;
+        margin-bottom: 36px;
+    }
+
+    .service-image-wrapper {
+        height: 160px;
+        margin-bottom: 20px;
+    }
+
+    .service-main-title {
+        font-size: 18px;
+        margin-bottom: 6px;
+    }
+
+    .service-sub-title {
+        font-size: 14px;
+        margin-bottom: 12px;
+    }
+
+    .service-description {
+        font-size: 13px;
+        line-height: 1.6;
     }
 }
